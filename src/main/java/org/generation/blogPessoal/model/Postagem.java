@@ -38,6 +38,18 @@ public class Postagem {
 	@JsonIgnoreProperties("Postagem")		//evitar recursividade desnecessaria, parâmetro do que ignorar
 	private Tema tema;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("Postagem")		
+	private Usuario usuario;
+	
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 
 	public long getId() {
 		return id;
